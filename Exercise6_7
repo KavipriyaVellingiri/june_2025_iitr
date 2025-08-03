@@ -1,0 +1,177 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Number System : Base7 \n",
+    "\n",
+    "0,1,2,3,4,5,6... 10,11,12,13,14,15,16...20,21,22,23,24,25,26......60,61,62,63,64,65,66..... 100,101,102,103,104,105,106...\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q1: Choose your base between 3 and 13. And write upto 3 three digit numbers in that base.\n",
+    "#Q2: Add/Substract single digit and multiple digits in your number system\n",
+    "#Q3: Prepare a table of single digit multiplications in your number system.\n",
+    "#Q4: Multiply multiple digits in your number system\n",
+    "\n",
+    "Refer to the NumberSystemBase7.png file\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q5:Convert 1, 10, 20, 30, 100 from your base to base10\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Base10_output: 1\n",
+      "Base10_output: 7\n",
+      "Base10_output: 14\n",
+      "Base10_output: 21\n",
+      "Base10_output: 49\n"
+     ]
+    }
+   ],
+   "source": [
+    "inputnumbers = ['1','10','20','30','100']\n",
+    "for numbers in inputnumbers:\n",
+    "    base10value = 0\n",
+    "    input_length = len(numbers)\n",
+    "    #print (\"Length of the numbers\",input_length )\n",
+    "    for value in range(input_length):\n",
+    "    #    print (\"current value\",value )\n",
+    "        actual =  int(numbers[input_length - 1 - value])\n",
+    "    #    print (\"actual value\",actual )\n",
+    "        base10value = actual*(7**value)\n",
+    "    print (\"Base10_output:\", base10value)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q6:Write a strategy to convert a number in your base to base 10 in plain english or pseudo code or python"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 22,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Enter the input number in base 7:100\n",
+      "Base10_output: 49\n"
+     ]
+    }
+   ],
+   "source": [
+    "inputbase7number = input(\"Enter the input number in base 7:\")\n",
+    "base10value = 0\n",
+    "input_length = len(inputbase7number)\n",
+    "#print (\"Length of the numbers\",input_length )\n",
+    "for value in range(input_length):\n",
+    " #   print (\"current value\",value )\n",
+    "    actual =  int(inputbase7number[input_length - 1 - value])\n",
+    " #   print (\"actual value\",actual )\n",
+    "    base10value = base10value + actual*(7**value)\n",
+    "print (\"Base10_output:\", base10value)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#Q7:Write a strategy to convert a number in base N to base M in plain english or pseudo code or python\n",
+    "def base10(inputnumber, inputbase):\n",
+    "    base10output = 0\n",
+    "    input_length = len(inputnumber)\n",
+    "    for i in range (input_length):\n",
+    "        base10actual =  int(inputnumber[input_length - 1 - i])\n",
+    "        base10output = base10value + base10actual*(inputbase**value)\n",
+    "    return base10output\n",
+    "def base10_t0_outputbase(base10outputval, outputbaseval):\n",
+    "    result =\"\"\n",
+    "    while base10outputval > 0:\n",
+    "          result = str(base10outputval % outputbaseval) + result\n",
+    "          base10outputval // outputbaseval\n",
+    "    return result\n",
+    "inputnumber = input(\"Enter the input number:\")\n",
+    "inputbase = int (input (\"Enter the base of the input data:\"))\n",
+    "outputbaseval = int (input (\"Enter the base of the output value:\"))\n",
+    "if inputbase < 2 or  inputbase > 9 or outputbaseval < 2 or outputbaseval >9 :\n",
+    "     print (\"This program is designed for bases between 2 and 9: \")\n",
+    "else:\n",
+    "    base10output = base10(inputnumber, inputbase)\n",
+    "    finaloutputvalue = base10_t0_outputbase (base10output,outputbaseval)\n",
+    "    print(\"inputnumber:\", inputnumber, \"inputbase:\",inputbase, \"finaloutputvalue: \",finaloutputvalue)\n",
+    "     \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.6.8"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": true,
+   "sideBar": true,
+   "skip_h1_title": false,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {},
+   "toc_section_display": true,
+   "toc_window_display": false
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
